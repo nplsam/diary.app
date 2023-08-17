@@ -4,3 +4,14 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+h1 {
+    font-size: 5rem;
+    margin: 10px;
+}
+
+#diary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
