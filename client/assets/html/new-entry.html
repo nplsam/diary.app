@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/2d69e80447.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -12,13 +12,28 @@
         <h1>My Diary</h1>
     </header>
 
-    <main>
-        <a href="./assets/html/new-entry.html">
-            <button class="btn" id="new-entry-btn">New Entry</button>
-        </a>
-        <a href="./assets/html/old-entries.html">
-            <button class="btn" id="old-entries-btn">Old Entries</button>
-        </a>
+    <main id="newEntry">
+        <h2>New Entry</h2>
+        <form id="entryForm">
+            <div id="entryDetails">
+                <label for="entryTitle">Title:</label>
+                <input type="text" id="entryTitle" name="entryTitle" placeholder="My Diary">
+    
+                <label for="entryDate">Date:</label>
+                <input type="date" id="entryDate" name="entryDate">
+                
+                <label for="entryTime">Time:</label>
+                <input type="time" id="entryTime" name="entryTime">
+                
+                <label for="entryCategory">Category:</label>
+                <input type="text" id="entryCategory" name="entryCategory" placeholder="Personal">
+            </div>
+            
+            <label for="entryContent"></label>
+            <textarea id="entryContent" name="entryContent" required placeholder="Enter text here"></textarea>
+        
+            <button id="submitBtn" type="submit">Save Entry</button>
+        </form>
     </main>
 
     <footer>
