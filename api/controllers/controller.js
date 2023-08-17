@@ -19,6 +19,16 @@ async function show (req, res) {
     }
 }
 
+async function showCat (req, res) {
+    try {
+        let cat = req.params.category.toLowerCase()
+        const post = await Post.getOneByCat(cat)
+        res.status(200).json(post)
+    } catch (err) {
+        res.status(404).json({ error: err. message })
+    }
+}
+
 async function create (req, res) {
     try {
         const data = req.body;
@@ -29,6 +39,19 @@ async function create (req, res) {
     }
 }
 
+async function update (req, res) {
+    try {
+        const id = parseInt(req.params.id)
+        const data = req.body;
+        const post = await Post.getOneById(id);
+        const result = await post.update(data);
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(404).json({error: err.message})
+    }
+}
+
+
 
 
 
@@ -36,5 +59,7 @@ async function create (req, res) {
 module.exports = {
     index,
     show,
-    create
+    showCat,
+    create,
+    update
 }

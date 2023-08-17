@@ -27,6 +27,14 @@ class Post {
         return new Post(response.rows[0]);
     }
 
+    static async getOneByCat(category) {
+        const response = await db.query("SELECT * FROM posts WHERE LOWER(category) = $1", [category])
+        if (response.rows.length != 1) {
+            throw new Error("Unable to locate post.")
+        }
+        return new Post(response.rows[0])
+    }
+
     static async create(data) {
         const { date_post, time_post, title, content, category } = data;
         let response = await db.query("INSERT INTO posts (date_post, time_post, title, content, category) VALUES ($1, $2, $3, $4, $5) RETURNING id;",
@@ -35,6 +43,20 @@ class Post {
         const newPost = await Post.getOneById(newId);
         return newPost;
     }
+    
+    async update(data) {
+        const response = await db.query("UPDATE posts SET content = $1 WHERE id = $2 RETURNING title, content;",
+            [ data.content, this.id ]);
+        if (response.rows.length != 1) {
+            throw new Error("Unable to update post.")
+        }
+        return new Post(response.rows[0]);
+    }
+
+
+
+
+
 }
 
 module.exports = Post
