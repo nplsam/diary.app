@@ -19,9 +19,13 @@ class Post {
         return response.rows.map(p => new Post(p))
     }
 
-
-
-
+    static async getOneById(id) {
+        const response = await db.query("SELECT * FROM posts WHERE id = $1", [id]);
+        if (response.rows.length != 1) {
+            throw new Error("Unable to locate post.")
+        }
+        return new Post(response.rows[0]);
+    }
 
 
 
