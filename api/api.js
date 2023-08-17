@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const logger = require('morgan')
+const postRouter = require('./routers/routers')
 
 const api = express()
 
@@ -14,5 +15,7 @@ api.get('/', (req, res) => {
         description: "Log your entries in our personal diary!"
     })
 })
+
+api.use('/posts', postRouter)
 
 module.exports = api
