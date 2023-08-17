@@ -27,8 +27,14 @@ class Post {
         return new Post(response.rows[0]);
     }
 
-
-
+    static async create(data) {
+        const { date_post, time_post, title, content, category } = data;
+        let response = await db.query("INSERT INTO posts (date_post, time_post, title, content, category) VALUES ($1, $2, $3, $4, $5) RETURNING id;",
+            [date_post, time_post, title, content, category]);
+        const newId = response.rows[0].id;
+        const newPost = await Post.getOneById(newId);
+        return newPost;
+    }
 }
 
 module.exports = Post
