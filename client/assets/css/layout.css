@@ -13,7 +13,7 @@ h1 {
 }
 
 #diary {
-    height: 70vh;
+    height: 69vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

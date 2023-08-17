@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/2d69e80447.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>My Diary</h1>
+    </header>
+
+    <section id="new-entry">
+        <h2>New Entry</h2>
+        <form id="entryForm">
+            <label for="entryDate">Date:</label>
+            <input type="date" id="entryDate" name="entryDate" required>
+            
+            <label for="entryTime">Time:</label>
+            <input type="time" id="entryTime" name="entryTime" required>
+            
+            <label for="entryTitle">Title:</label>
+            <input type="text" id="entryTitle" name="entryTitle" required>
+            
+            <label for="entryContent">Content:</label>
+            <textarea id="entryContent" name="entryContent" required></textarea>
+            
+            <label for="entryCategory">Category:</label>
+            <input type="text" id="entryCategory" name="entryCategory">
+            
+            <button id="new-entry-btn" type="submit">Save Entry</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>
+            Personal Diary App
+        </p>
+        <ul>
+            <li>
+                <a href="https://github.com/nplsam" target="_blank" rel="noopener" aria-label="Visit Sam Merrick's GitHub profile">
+                    <i class="fa-brands fa-github" style="color: #000000;"></i>
+                    Sam Merrick
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/salinathapa" target="_blank" rel="noopener" aria-label="Visit Salina Thapa's GitHub profile">
+                    <i class="fa-brands fa-github" style="color: #000000;"></i>
+                    Salina Thapa
+                </a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
