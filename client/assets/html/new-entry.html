@@ -12,27 +12,29 @@
         <h1>My Diary</h1>
     </header>
 
-    <section id="new-entry">
+    <main id="newEntry">
         <h2>New Entry</h2>
         <form id="entryForm">
-            <label for="entryDate">Date:</label>
-            <input type="date" id="entryDate" name="entryDate" required>
+            <div id="entryDetails">
+                <label for="entryTitle">Title:</label>
+                <input type="text" id="entryTitle" name="entryTitle" placeholder="My Diary">
+    
+                <label for="entryDate">Date:</label>
+                <input type="date" id="entryDate" name="entryDate">
+                
+                <label for="entryTime">Time:</label>
+                <input type="time" id="entryTime" name="entryTime">
+                
+                <label for="entryCategory">Category:</label>
+                <input type="text" id="entryCategory" name="entryCategory" placeholder="Personal">
+            </div>
             
-            <label for="entryTime">Time:</label>
-            <input type="time" id="entryTime" name="entryTime" required>
-            
-            <label for="entryTitle">Title:</label>
-            <input type="text" id="entryTitle" name="entryTitle" required>
-            
-            <label for="entryContent">Content:</label>
-            <textarea id="entryContent" name="entryContent" required></textarea>
-            
-            <label for="entryCategory">Category:</label>
-            <input type="text" id="entryCategory" name="entryCategory">
-            
-            <button id="new-entry-btn" type="submit">Save Entry</button>
+            <label for="entryContent"></label>
+            <textarea id="entryContent" name="entryContent" required placeholder="Enter text here"></textarea>
+        
+            <button id="submitBtn" type="submit">Save Entry</button>
         </form>
-    </section>
+    </main>
 
     <footer>
         <p>

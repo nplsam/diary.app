@@ -12,7 +12,7 @@ h1 {
     margin: 10px;
 }
 
-#diary {
+main {
     height: 69vh;
     display: flex;
     flex-direction: column;
