@@ -15,9 +15,16 @@ class Post {
     }
 
     static async getAll() {
-        const response = await db.query("SELECT * FROM posts")
+        const response = await db.query("SELECT * FROM posts ORDER BY date_post, time_post")
         return response.rows.map(p => new Post(p))
     }
+
+
+
+
+
+
+
 }
 
 module.exports = Post

@@ -12,4 +12,6 @@ CREATE TABLE posts (
 
 INSERT INTO posts (date_post, time_post, title, content, category)
 VALUES
-    ('17/08/2023', '12:01', 'example', 'this is just a test!', 'personal');
+    ('16/08/2023', '11:59', 'example1', 'this is just a test!', 'personal'),
+    ('15/08/2023', '10:00', 'example2', 'testing...', 'things'),
+    ('17/08/2023', '12:01', 'example3', 'me again', 'stuff');
