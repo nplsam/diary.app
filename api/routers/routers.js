@@ -9,7 +9,6 @@ postRouter.get('/:id', postController.show)
 postRouter.get('/:category', postController.showCat)
 postRouter.post("/", postController.create)
 postRouter.patch("/:id", postController.update)
-
-
+postRouter.delete("/:id", postController.destroy)
 
 module.exports = postRouter

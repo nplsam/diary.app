@@ -53,10 +53,10 @@ class Post {
         return new Post(response.rows[0]);
     }
 
-
-
-
-
+    async destroy() {
+        const response = await db.query("DELETE FROM posts WHERE id = $1 RETURNING *;", [this.id]);
+        return new Post(response.rows[0]);
+    }
 }
 
 module.exports = Post

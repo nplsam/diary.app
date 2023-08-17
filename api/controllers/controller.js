@@ -51,15 +51,22 @@ async function update (req, res) {
     }
 }
 
-
-
-
-
+async function destroy (req, res) {
+    try {
+        const id = parseInt(req.params.id);
+        const postToDelete = await Post.getOneById(id);
+        await postToDelete.destroy();
+        res.sendStatus(204)
+    } catch (err) {
+        res.status(404).json({error: err.message})
+    }
+}
 
 module.exports = {
     index,
     show,
     showCat,
     create,
-    update
+    update,
+    destroy
 }
