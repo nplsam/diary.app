@@ -4,7 +4,7 @@ const fs = require('fs')
 
 const db = require('./connect')
 
-const sql = fs.readFileSync(__dirname + "/data.sql").toString()
+const sql = fs.readFileSync(__dirname + "/setup.sql").toString()
 
 db.query(sql)
     .then(data => {
